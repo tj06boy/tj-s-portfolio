@@ -1,0 +1,169 @@
+/*
+  style.css
+  This file contains custom styles that work alongside Tailwind CSS.
+  It does NOT use any special Tailwind syntax like @apply, so it can be used directly.
+*/
+
+/* 1. Root Variables and Base Styles
+  ============================================ */
+:root {
+    --brand-orange: #FF6600;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0A0A0A;
+    color: #E2E8F0;
+    overflow-x: hidden;
+}
+
+/* 2. Custom Helper Classes
+  ============================================ */
+/* These classes can be used in your HTML alongside Tailwind classes */
+.brand-orange-text { color: var(--brand-orange); }
+.brand-orange-bg { background-color: var(--brand-orange); }
+.brand-orange-border { border-color: var(--brand-orange); }
+
+/* 3. Animation and Effects
+  ============================================ */
+/* For the on-scroll reveal effect */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* For the hero name character animation */
+#name-container span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    animation: fadeInLetter 0.5s forwards;
+}
+
+@keyframes fadeInLetter {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hero Spotlight Effect - Made more prominent */
+#spotlight {
+    position: absolute;
+    width: 600px; /* Increased size */
+    height: 600px; /* Increased size */
+    border-radius: 50%;
+    /* Increased visibility */
+    background: radial-gradient(circle, rgba(255, 102, 0, 0.1) 0%, rgba(255, 102, 0, 0) 60%);
+    pointer-events: none;
+    transition: transform 0.1s ease-out, opacity 0.3s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+/* 4. Component Styles
+  ============================================ */
+/* Section title underline animation */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--brand-orange);
+    transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.reveal-visible .section-title::after {
+    width: 60%;
+}
+
+/* Navigation link hover effect */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--brand-orange);
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Skill card hover effect - Made more prominent */
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card:hover {
+    transform: translateY(-12px) scale(1.05); /* Increased lift */
+    box-shadow: 0 20px 35px rgba(255, 102, 0, 0.2); /* Increased shadow */
+}
+
+/* Experience timeline styles - Hover effect is now fully removed */
+.timeline-item {
+    transition: background-color 0.3s ease;
+}
+.timeline-item .timeline-dot {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(0.8);
+}
+.timeline-item.reveal-visible .timeline-dot {
+    background-color: var(--brand-orange);
+    transform: scale(1.2);
+    animation: pulse-orange 2s infinite;
+}
+
+/* This animation still runs when the item becomes visible */
+@keyframes pulse-orange {
+    0% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 102, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 102, 0, 0); }
+}
+
+/* Social media icon hover effect */
+.social-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icon:hover {
+    transform: translateY(-5px);
+    color: var(--brand-orange);
+}
+
+/* Resume button hover effect */
+.resume-button {
+     transition: all 0.3s ease;
+}
+.resume-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 102, 0, 0.2);
+}
+
+/* 5. Miscellaneous
+  ============================================ */
+/* Custom scrollbar styles */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-orange); }
+
+/* Mobile menu transition */
+#mobile-menu {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Jacob | Tech Enthusiast</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-bold brand-orange-text">Thomas Jacob</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="nav-link text-slate-300 hover:brand-orange-text transition-colors duration-300">About</a>
+                <a href="#toolkit" class="nav-link text-slate-300 hover:brand-orange-text transition-colors duration-300">Toolkit</a>
+                <a href="#experience" class="nav-link text-slate-300 hover:brand-orange-text transition-colors duration-300">Experience</a>
+                <a href="#contact" class="nav-link text-slate-300 hover:brand-orange-text transition-colors duration-300">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden z-50">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/90 backdrop-blur-lg z-40 flex flex-col justify-center items-center space-y-8 text-2xl transform translate-x-full md:hidden">
+        <a href="#about" class="mobile-nav-link text-slate-300 hover:brand-orange-text">About</a>
+        <a href="#toolkit" class="mobile-nav-link text-slate-300 hover:brand-orange-text">Toolkit</a>
+        <a href="#experience" class="mobile-nav-link text-slate-300 hover:brand-orange-text">Experience</a>
+        <a href="#contact" class="mobile-nav-link text-slate-300 hover:brand-orange-text">Contact</a>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <main>
+        <!-- Section 1: Hero -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+            <!-- Spotlight element will be added here by JS -->
+            <div class="max-w-4xl mx-auto z-10">
+                <h1 id="name-container" class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-4">
+                    <!-- Name will be injected here by JS -->
+                </h1>
+                <p id="subtitle" class="text-xl md:text-2xl text-slate-400 opacity-0 transition-opacity duration-1000 delay-500">
+                    Tech Enthusiast
+                </p>
+            </div>
+            <div class="absolute bottom-10 animate-bounce z-10">
+                <svg class="w-6 h-6 brand-orange-text" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Section 2: About Me -->
+        <section id="about" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2 reveal">
+                        <div class="w-full h-auto rounded-lg overflow-hidden shadow-lg shadow-black/30">
+                           <img src="Thomas.jpg" alt="A professional photo of Thomas Jacob" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="md:col-span-3 reveal">
+                        <h2 class="section-title text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+                        <p class="text-lg text-slate-300 mb-4 leading-relaxed">
+                            I'm Thomas, a developer based in Mallappally, Kerala, with a passion for building clean, efficient, and beautiful digital experiences. My expertise lies in turning complex problems into elegant software solutions.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            I thrive in environments that challenge me to learn and grow, and I'm always excited to collaborate on projects that push the boundaries of technology and design. When I'm not coding, I enjoy exploring new technologies and contributing to open-source projects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Toolkit -->
+        <section id="toolkit" class="py-20 md:py-32 bg-black/20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-3xl md:text-4xl font-bold mb-12 reveal">My Toolkit</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal"><p class="text-lg md:text-xl font-bold">C</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 50ms;"><p class="text-lg md:text-xl font-bold">C++</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 100ms;"><p class="text-lg md:text-xl font-bold">Java</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 150ms;"><p class="text-lg md:text-xl font-bold">HTML & CSS</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 200ms;"><p class="text-lg md:text-xl font-bold">Python</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 250ms;"><p class="text-lg md:text-xl font-bold">JavaScript</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 300ms;"><p class="text-lg md:text-xl font-bold">Canva</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 350ms;"><p class="text-lg md:text-xl font-bold">G-Suite</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 400ms;"><p class="text-lg md:text-xl font-bold">Robotics</p></div>
+                    <div class="skill-card bg-slate-900/50 p-6 rounded-lg reveal" style="transition-delay: 450ms;"><p class="text-lg md:text-xl font-bold">Arduino IDE</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Experience -->
+        <section id="experience" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center mb-16 reveal">My Experience</h2>
+                <div class="relative max-w-3xl mx-auto md:border-l-2 md:border-slate-700 md:pl-10">
+                    <!-- Experience Item 1: Vice Chair -->
+                    <div class="timeline-item reveal mb-12 md:pl-10 relative p-4 rounded-lg">
+                        <div class="timeline-dot absolute -left-2.5 top-7 w-5 h-5 rounded-full bg-slate-700 border-4 border-black/20 hidden md:block"></div>
+                        <p class="font-bold text-lg brand-orange-text">Vice Chair</p>
+                        <p class="text-slate-400 font-semibold">IEEE SB CE KALLOOPPARA</p>
+                        <p class="text-sm text-slate-500 mt-1 mb-2">Feb 2025 - Present</p>
+                        <p class="text-slate-300">Assisting in leadership, organizing events, fostering student engagement, coordinating collaborations, and promoting IEEE initiatives.</p>
+                    </div>
+                    <!-- Experience Item 2: LINK Representative -->
+                    <div class="timeline-item reveal mb-12 md:pl-10 relative p-4 rounded-lg">
+                         <div class="timeline-dot absolute -left-2.5 top-7 w-5 h-5 rounded-full bg-slate-700 border-4 border-black/20 hidden md:block"></div>
+                         <p class="font-bold text-lg brand-orange-text">LINK Representative</p>
+                         <p class="text-slate-400 font-semibold">IEEE SB CE KALLOOPPARA</p>
+                         <p class="text-sm text-slate-500 mt-1 mb-2">Feb 2025 - Present</p>
+                         <p class="text-slate-300">Representing IEEE SB CEK in LINK, coordinating events, fostering student engagement, and enhancing regional collaboration.</p>
+                    </div>
+                    <!-- Experience Item 3: PES General Secretary -->
+                    <div class="timeline-item reveal mb-12 md:pl-10 relative p-4 rounded-lg">
+                        <div class="timeline-dot absolute -left-2.5 top-7 w-5 h-5 rounded-full bg-slate-700 border-4 border-black/20 hidden md:block"></div>
+                        <p class="font-bold text-lg brand-orange-text">PES General Secretary</p>
+                        <p class="text-slate-400 font-semibold">IEEE SB CE KALLOOPPARA</p>
+                        <p class="text-sm text-slate-500 mt-1 mb-2">Jan 2024 - Jan 2025 · 1 yr 1 mo</p>
+                        <p class="text-slate-300">Led the Power & Energy Society (PES) chapter, managing administrative duties and organizing technical events and workshops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Contact -->
+        <section id="contact" class="py-20 md:py-32 bg-black/20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 reveal">Let's Build Something.</h2>
+                <p class="text-lg text-slate-400 max-w-xl mx-auto mb-8 reveal" style="transition-delay: 100ms;">
+                    I'm currently open to new opportunities and collaborations. Feel free to reach out.
+                </p>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <a href="mailto:thomaschettu06@gmail.com" class="inline-block text-xl font-mono brand-orange-text hover:underline mb-8">
+                        thomaschettu06@gmail.com
+                    </a>
+                </div>
+                <div class="flex justify-center space-x-6 mb-12 reveal" style="transition-delay: 300ms;">
+                    <a href="https://github.com/tj06boy" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-400">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/thomas-jacob-aa100b2a3" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-400">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/tj_06_boy/" target="_blank" rel="noopener noreferrer" class="social-icon text-slate-400">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.917 3.917 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.916 3.916 0 0 0-.923-1.417A3.916 3.916 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.282.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.231 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.275-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.884a1.161 1.161 0 1 0 0 2.322 1.161 1.161 0 0 0 0-2.322zM8 4.202a3.797 3.797 0 1 0 0 7.595 3.797 3.797 0 0 0 0-7.595zM8 10.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                    </a>
+                </div>
+                <div class="reveal" style="transition-delay: 400ms;">
+                    <a href="#" class="resume-button inline-block bg-transparent border-2 brand-orange-border brand-orange-text font-bold text-lg px-8 py-3 rounded-lg hover:brand-orange-bg hover:text-white">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 border-t border-slate-800">
+        <p class="text-slate-500">Designed & Built by Thomas Jacob with Gemini</p>
+        <p class="text-slate-600 text-sm">Mallappally, Kerala &bull; <span id="current-time"></span></p>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
